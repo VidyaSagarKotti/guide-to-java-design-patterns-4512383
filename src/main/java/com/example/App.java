@@ -9,7 +9,11 @@ public class App {
 
         var frenchLocalizedMessage = new FrenchLocalizedMessageAdapter();
         var frenchGreeting = new Greeting(frenchLocalizedMessage);
-        frenchGreeting.print();
+        frenchGreeting.print();  // 
+
+        var frenchLocalizedMessageClass = new FrenchLocalizedMessageClassAdapter();
+        var frenchGreetingClass = new Greeting(frenchLocalizedMessageClass);
+        frenchGreetingClass.print();
     }
 
 }
