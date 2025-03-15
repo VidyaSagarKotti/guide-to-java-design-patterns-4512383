@@ -4,11 +4,14 @@ public class App {
 
     public static void main(String[] args) {
         var light = new Light();
-        light.isOn();
-        light.turnOnLight();
-        light.isOn();
-        light.turnOffLight();
-        light.isOn();
+        var executor = new CommandExecutor();
+        executor.enqueueCommand(new StatusCommand(light));
+        executor.enqueueCommand(new OnCommand(light));
+        executor.enqueueCommand(new StatusCommand(light));
+        executor.enqueueCommand(new OffCommand(light));
+        executor.enqueueCommand(new StatusCommand(light));
+
+        executor.execute();
     }
 
 }
