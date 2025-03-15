@@ -5,7 +5,7 @@ import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WeatherUpdates implements PropertyChangeListener{
+public class WeatherUpdates2 implements PropertyChangeListener{
 
     private List<String> weatherUpdates = new ArrayList<>();
 
