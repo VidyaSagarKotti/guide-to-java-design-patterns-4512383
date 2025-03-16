@@ -6,8 +6,8 @@ public class App {
 
         var checkoutPage = new CheckoutPage();
 
-        checkoutPage.payWithCard();
-        checkoutPage.payByBankTransfer();
+        checkoutPage.pay(PaymentStrategy.payWithCard);
+        checkoutPage.pay(PaymentStrategy.payByBankTransfer);
 
     }
 
