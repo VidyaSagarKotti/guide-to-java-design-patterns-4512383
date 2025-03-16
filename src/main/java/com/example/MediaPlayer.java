@@ -1,20 +1,14 @@
 package com.example;
 
 public class MediaPlayer {
-    private boolean isPlaying;
+    private PlayerState playerState;
 
     public MediaPlayer() {
-        this.isPlaying = false;
+        playerState = new PlayerPauseState();
     }
 
     public void pressButton() {
-        if (this.isPlaying) {
-            pause();
-            this.isPlaying = false;
-        } else {
-            play();
-            this.isPlaying = true;
-        }
+        playerState.pressButton(this);
     }
 
     public void play() {
@@ -25,6 +19,10 @@ public class MediaPlayer {
     public void pause() {
         System.out.println("Paused");
         System.out.println("Displaying play icon");
+    }
+
+    public void setPlayerState(PlayerState playerState) {
+        this.playerState = playerState;
     }
 
 }
